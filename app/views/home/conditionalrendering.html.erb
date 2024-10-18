@@ -18,3 +18,17 @@
         <td> <%= @data[:stateCode] %> </td>
     </tr>
 </table>
+
+<% if @data[:loggedIn] %>
+    <h1>Hi <%= @data[:name] %>! You are logged in Currently!</h1>
+<% else %>
+    <h1>Hi <%= @data[:name] %>! YOu are just a guest! please login!!</h1>
+<% end %>
+
+<% if @data[:countryCode] == "US" %>
+    <h1>Currency Code is USD</h1>
+<% elsif @data[:countryCode] %>
+    <h1>Currency Code is GBP</h1>
+<% else %>
+    <h1>Invalid Country Code!</h1>
+<% end %>
