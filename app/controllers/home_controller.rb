@@ -49,4 +49,14 @@ class HomeController < ApplicationController
       'stateCode': nil
     }
   end
+
+  def loopthrougharrays
+    @Products = []
+
+    @Products.push({ 'productID': 1, 'productName': "AMD Ryzen 3990", 'quantity': 100, 'unitsInStock': 50, 'disContinued': "False", 'cost': 3000 })
+
+    @Products.push({ 'productID': 2, 'productName': "Intel Core i9-10900K", 'quantity': 80, 'unitsInStock': 40, 'disContinued': "False", 'cost': 500 })
+
+    @Products.push({ 'productID': 3, 'productName': "Nvidia GeForce RTX 3080", 'quantity': 120, 'unitsInStock': 70, 'disContinued': "False", 'cost': 700 })
+  end
 end
