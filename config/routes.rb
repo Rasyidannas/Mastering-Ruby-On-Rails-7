@@ -12,10 +12,5 @@ Rails.application.routes.draw do
   # Defines the root path route ("/")
   # root "posts#index"
 
-  get "home/index" => "home#index"
-  get "home/getquerystringvalues" => "home#getquerystringvalues"
-  get "home/passdatatoviews" => "home#passdatatoviews"
-  get "home/showdatetimeinfo" => "home#showdatetimeinfo"
-  get "home/conditionalrendering" => "home#conditionalrendering"
-  get "home/loopthrougharrays" => "home#loopthrougharrays"
+  get "/home/index" => "home#index"
 end
