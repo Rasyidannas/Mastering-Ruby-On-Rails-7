@@ -13,4 +13,5 @@ Rails.application.routes.draw do
   # root "posts#index"
 
   get "home/LoadUsers" => "home#LoadUsers"
+  get "home/LoadUsers2" => "home#LoadUsers2"
 end

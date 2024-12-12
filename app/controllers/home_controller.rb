@@ -8,4 +8,10 @@ class HomeController < ApplicationController
     response=HTTParty.get(base_url)
     response.success? ? response : []
   end
+
+  def LoadUsers2
+    base_url = "https://fakestoreapi.com/users"
+    @image = "https://i.pravatar.cc"
+    @users=CallRestAPI(base_url)
+  end
 end
