@@ -1,0 +1,57 @@
+<div class="container">
+    <div class="row">
+        <div class="col-md-6">
+            <h4>User Details</h4>
+            <div class="card">
+                <div class="card-header">
+                    <b><span>Username:</span><%= @user["username"] %></b>
+                    <div class="mt-2">
+                        <%= image_tag "https://i.pravatar.cc/", style: 'width: 500px; height: 250px;' %>
+                    </div>
+                </div>
+                <div class="card-body">
+                    <b>Email</b>
+                    <div classs="mb-2"> <%= @user["email"] %> </div>
+
+                    <b>First Name</b>
+                    <div classs="mb-2"> <%= @user["name"]["firstname"] %> </div>
+                    
+                    <b>last Name</b>
+                    <div classs="mb-2"> <%= @user["name"]["lastname"] %> </div>
+
+                    <b>Phone</b>
+                    <div classs="mb-2"> <%= @user["phone"] %> </div>
+                </div>
+
+                <div class="card-footer">
+                    <%= link_to "Previous User", LoadUserDetails_path(params[:id].to_i-1), class:"btn" %>
+                    <%= link_to "Next User", LoadUserDetails_path(params[:id].to_i+1), class:"btn" %>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-6">
+            <h4 class="mt-4">Address Details</h4>
+            <div class="card">
+                <div class="card-header">
+                    <b><span>City: </span> <%= @user["address"]["city"] %> </b>
+                </div>
+                <div class="card-body">
+                    <b>Street</b>
+                    <div classs="mb-2"> <%= @user["address"]["street"] %> </div>
+
+                    <b>Street No.</b>
+                    <div classs="mb-2"> <%= @user["address"]["number"] %> </div>
+
+                    <b>Zip Code</b>
+                    <div classs="mb-2"> <%= @user["address"]["zipcode"] %> </div>
+
+                    <b>Geolocation Latitude</b>
+                    <div classs="mb-2"> <%= @user["address"]["geolocation"]["lat"] %> </div>
+
+                    <b>Geolocation Longitude</b>
+                    <div classs="mb-2"> <%= @user["address"]["geolocation"]["long"] %> </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

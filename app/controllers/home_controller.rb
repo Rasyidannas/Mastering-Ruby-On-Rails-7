@@ -14,4 +14,22 @@ class HomeController < ApplicationController
     @image = "https://i.pravatar.cc"
     @users=CallRestAPI(base_url)
   end
+
+  def ShowUserDetails
+    redirect_to LoadUserDetails_path(1)
+  end
+
+  def LoadUserDetails
+    id = params[:id].to_i
+
+    if id < 1 || id > 10
+      redirect_to LoadUserDetails_path(1)
+      return
+    end
+
+    response = HTTParty.get("https://fakestoreapi.com/users/#{id}")
+    if response.success?
+      @user = response
+    end
+  end
 end
