@@ -26,10 +26,15 @@
                 <div class="card-footer">
                     <%= link_to "Previous User", LoadUserDetails_path(params[:id].to_i-1), class:"btn" %>
                     <%= link_to "Next User", LoadUserDetails_path(params[:id].to_i+1), class:"btn" %>
+
+                    <div class="form-check">
+                      <input class="form-check-input" type="checkbox" calue="" id="address_details">
+                      <label id="lblShowHide" class="form-check-label" for="address_details">Show Address Detail</label>
+                    </div>
                 </div>
             </div>
         </div>
-        <div class="col-md-6">
+        <div class="col-md-6 address-details-div d-none">
             <h4 class="mt-4">Address Details</h4>
             <div class="card">
                 <div class="card-header">
