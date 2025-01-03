@@ -1,0 +1,30 @@
+<div>
+  <h1>Listing Employees</h1>
+  <br/>
+  <br/><br/>
+
+  <% if @employees.present? %>
+    <table class="table">
+      <thead>
+        <tr>
+          <th>ID</th>
+          <th>First Name</th>
+          <th>Phone</th>
+          <th>Email</th>
+          <th>Actions</th>
+        </tr>
+      </thead>
+      <tbody>
+        <% @employees.each do |employee| %>
+          <tr>
+            <td><% employee.id %></td>
+            <td><% employee.firstname %></td>
+            <td><% employee.lastname %></td>
+            <td><% employee.phone %></td>
+            <td><% employee.email %></td>
+          </tr>
+        <% end %>
+      </tbody>
+    </table>
+  <% end %>
+</div>
