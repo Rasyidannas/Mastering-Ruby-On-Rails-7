@@ -13,4 +13,5 @@ Rails.application.routes.draw do
   # root "posts#index"
   
   get "employees" => "employees#index", as: "employees"
+  get "employees/:id" => "employees#show", as: "employee"
 end

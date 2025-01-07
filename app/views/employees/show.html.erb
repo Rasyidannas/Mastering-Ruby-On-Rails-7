@@ -1,0 +1,55 @@
+<div>
+  <h1>Employee Details</h1>
+  <br/>
+
+  <table class="table">
+  <tbody>
+      <tr>
+        <td>Employee ID</td>
+        <td><%= @employee.id %></td>
+      </tr>
+      <tr>
+        <td>First Name</td>
+        <td><%= @employee.firstname %></td>
+      </tr>
+      <tr>
+        <td>Last Name</td>
+        <td><%= @employee.lastname %></td>
+      </tr>
+      <tr>
+        <td>Has Passport</td>
+        <td><%= @employee.haspassport %></td>
+      </tr>
+      <tr>
+        <td>Gender</td>
+        <td><%= @employee.gender %></td>
+      </tr>
+      <tr>
+        <td>Salary</td>
+        <td><%= @employee.salary %></td>
+      </tr>
+      <tr>
+        <td>Birth Date</td>
+        <td><%= @employee.birthdate %></td>
+      </tr>
+      <tr>
+        <td>Hiring Date</td>
+        <td><%= @employee.hiredate %></td>
+      </tr>
+      <tr>
+        <td>Email</td>
+        <td><%= @employee.email %></td>
+      </tr>
+      <tr>
+        <td>Phone Number</td>
+        <td><%= @employee.phone %></td>
+      </tr>
+      <tr>
+        <td>Notes</td>
+        <td><%= @employee.notes %></td>
+      </tr>
+    </tbody>
+  </table>
+
+  <a href="<%= employees_path %>">Back To List</a>
+</div>
