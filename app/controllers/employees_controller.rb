@@ -21,6 +21,16 @@ class EmployeesController < ApplicationController
     end
   end
 
+  def delete_employee
+    @employee = Employee.find(params[:id])
+  end
+
+  def destroy
+    @employee = Employee.find(params[:id])
+    @employee.destroy!
+    redirect_to employees_path
+  end
+
   def employee_params
     params.require(:employee).permit(:firstname, :lastname, :haspassport, :salary, :gender, :email, :phone, :birthdate, :hiredate, :notes)
   end
