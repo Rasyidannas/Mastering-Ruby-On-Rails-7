@@ -22,7 +22,10 @@
             <td><%= employee.lastname %></td>
             <td><%= employee.phone %></td>
             <td><%= employee.email %></td>
-            <td><a href="<%= employee_path(employee) %>">Details</a></td>
+            <td>
+              <a href="<%= employee_path(employee) %>">Details</a>
+              <a href="<%= edit_employee_path(employee) %>">Edit</a>
+            </td>
           </tr>
         <% end %>
       </tbody>
