@@ -31,6 +31,20 @@ class EmployeesController < ApplicationController
     redirect_to employees_path
   end
 
+  def new
+    @employee = Employee.new
+  end
+
+  def create
+    @employee = Employee.new(employee_params)
+
+    if @employee.save
+      redirect_to employees_path, notice: "Employee was successfully created."
+    else
+      render :new, status: unprocessable_entity
+    end
+  end
+
   def employee_params
     params.require(:employee).permit(:firstname, :lastname, :haspassport, :salary, :gender, :email, :phone, :birthdate, :hiredate, :notes)
   end
