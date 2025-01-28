@@ -1,0 +1,37 @@
+<div>
+  <h1>Listing Employees</h1>
+  <br/>
+  <br/><br/>
+
+  <a href="<%= employee_new_path %>">New Employee</a>
+
+  <% if @employees.present? %>
+    <table class="table">
+      <thead>
+        <tr>
+          <th>ID</th>
+          <th>First Name</th>
+          <th>Phone</th>
+          <th>Email</th>
+          <th>Actions</th>
+        </tr>
+      </thead>
+      <tbody>
+        <% @employees.each do |employee| %>
+          <tr>
+            <td><%= employee.id %></td>
+            <td><%= employee.firstname %></td>
+            <td><%= employee.lastname %></td>
+            <td><%= employee.phone %></td>
+            <td><%= employee.email %></td>
+            <td>
+              <a href="<%= employee_path(employee) %>">Details</a>
+              <a href="<%= edit_employee_path(employee) %>">Edit</a>
+              <a href="<%= delete_employee_path(employee) %>">Delete</a>
+            </td>
+          </tr>
+        <% end %>
+      </tbody>
+    </table>
+  <% end %>
+</div>
