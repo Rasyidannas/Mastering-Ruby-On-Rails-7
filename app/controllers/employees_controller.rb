@@ -13,9 +13,9 @@ class EmployeesController < ApplicationController
 
   def update
     @employee = Employee.find(params[:id])
-    
+
     if @employee.update(employee_params)
-      redirect_to employees_path()  
+      redirect_to employees_path()
     else
       render :edit, status: :unprocessable_entity
     end
@@ -41,11 +41,11 @@ class EmployeesController < ApplicationController
     if @employee.save
       redirect_to employees_path, notice: "Employee was successfully created."
     else
-      render :new, status: unprocessable_entity
+      render :new, status: :unprocessable_entity
     end
   end
 
   def employee_params
-    params.require(:employee).permit(:firstname, :lastname, :haspassport, :salary, :gender, :email, :phone, :birthdate, :hiredate, :notes)
+    params.require(:employee).permit(:firstname, :lastname, :haspassport, :salary, :gender, :email, :phone, :birthdate, :hiredate, :notes, :department_id, :country_id)
   end
 end
