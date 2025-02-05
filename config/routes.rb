@@ -21,4 +21,6 @@ Rails.application.routes.draw do
   patch "employees/:id" => "employees#update"
   delete "employees/:id" => "employees#destroy"
   post "employees" => "employees#create", as: "employee_create"
+
+  resources:users
 end

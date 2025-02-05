@@ -94,6 +94,7 @@ ActiveRecord::Schema[7.2].define(version: 2025_02_04_053635) do
     t.boolean "termsandconditions"
     t.string "role"
     t.string "notes"
+    t.string "gender"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end

@@ -11,6 +11,7 @@ class CreateUsers < ActiveRecord::Migration[7.2]
       t.boolean :termsandconditions
       t.string :role
       t.string :notes
+      t.string :gender
 
       t.timestamps
     end
