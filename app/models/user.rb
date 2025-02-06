@@ -4,7 +4,7 @@ class User < ApplicationRecord
   ROLES = %w[admin moderator regular].freeze
 
   validates :name, presence: true, length: { minimum: 5, maximum: 15 }
-  validates :password, presence :true, confirmation: { case_sensitive: true }, length: { minimum: 5, maximum: 15 }, unless: -> { password.blank? }
+  validates :password, presence: true, confirmation: { case_sensitive: true }, length: { minimum: 5, maximum: 15 }, unless: -> { password.blank? }
   validates :password_confirmation, presence: true, length: { minimum: 5, maximum: 15 }
   validates :gender, presence: true
   validates :birthdate, presence: true
