@@ -14,4 +14,14 @@ class User < ApplicationRecord
   validates :websiteurl, presence: true, format: { with: /\Ahttps?:\/\/[a-zA-Z0-9\-]+\.[a-zA-Z]{2,}(:[0-9]+)?(\/.*)?\z/, message: "must be a valid URL" }
   validates :termsandconditions, acceptance: { message: 'must be accepted' }
   validates :role, presence: true, inclusion: { in: ROLES, message: 'is not a valid role' }
+
+  validate :birth_date_not_in_future
+
+  private
+
+  def birth_date_not_in_future
+    return unless birthdate.present? && birthdate.future?
+    
+    errors.add(:birthdate, "can't be in the future")
+  end
 end
