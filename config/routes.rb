@@ -23,4 +23,8 @@ Rails.application.routes.draw do
   post "employees" => "employees#create", as: "employee_create"
 
   resources:users
+
+  resources :singleemployeedelete, only: [:index] do
+    delete 'emp_delete', on: :collection
+  end
 end
