@@ -4,11 +4,11 @@
 
   <% if @employees.present? %>
     <div>
-      <%= form_with(url: bulk_delete_bulkdeleteemployees_path, method: :delete) do |f| %>
+      <%= form_with(url: bulk_delete_bulkdeleteemployees_path, method: :delete, data: {controller: "selectallcheckbox"}) do |f| %>
         <table class="table">
           <thead>
             <tr>
-              <th><%= check_box_tag 'select_all', nil, false, id: 'select-all' %></th>
+              <th><%= check_box_tag 'select_all', nil, false, id: 'select-all', data: {"selectallcheckbox-target": "chkheader", action: "change->selectallcheckbox#toggleCheckboxes"} %></th>
               <th>ID</th>
               <th>First Name</th>
               <th>Last Name</th>
@@ -22,7 +22,7 @@
           <tbody>
             <% @employees.each do |employee| %>
               <tr>
-                <td><%= check_box_tag "employee_ids[]", employee.id, false %></td>
+                <td><%= check_box_tag "employee_ids[]", employee.id, false, data: {"selectallcheckbox-target": "chkrow", employeeId: employee.id} %></td>
                 <td><%= employee.id %></td>
                 <td><%= employee.firstname %></td>
                 <td><%= employee.lastname %></td>
