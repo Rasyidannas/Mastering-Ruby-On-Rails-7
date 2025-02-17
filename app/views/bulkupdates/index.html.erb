@@ -1,0 +1,30 @@
+<div>
+  <h1>Bulk Update Employees</h1>
+  <br/>
+  <br/>
+  <% if @employees.present? %>
+    <table class="table">
+      <thead>
+        <tr>
+          <th>ID</th>
+          <th>First Name</th>
+          <th>Last Name</th>
+          <th>Department</th>
+          <th>Salary</th>
+        </tr>
+      </thead>
+
+      <tbody>
+        <% @employees.each do |employee| %>
+          <tr>
+            <td><%= employee.id %></td>
+            <td><%= text_field_tag "employees[#{employee.id}][firstname]", employee.firstname, class: 'form-control', readonly: true %></td>
+            <td><%= text_field_tag "employees[#{employee.id}][lastname]", employee.firstname, class: 'form-control', readonly: true %></td>
+            <td><%= text_field_tag "employees[#{employee.id}][salary]", employee.firstname, class: 'form-control', readonly: true %></td>
+            <td><%= select_tag "employees[#{employee.id}][department_id]", options_from_collection_for_select(select_department, :id, :name, employee.department.id), class: 'form-control', disabled: true %></td>
+          </tr>
+        <% end %>
+      </tbody>
+    </table>
+  <% end %>
+</div>
