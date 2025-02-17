@@ -16,12 +16,14 @@
 
       <tbody>
         <% @employees.each do |employee| %>
-          <tr>
+          <tr data-controller="editablerow">
+            <%= hidden_field_tag "employess[#{employee.id}][editable]", "", class: "editable" %>
             <td><%= employee.id %></td>
-            <td><%= text_field_tag "employees[#{employee.id}][firstname]", employee.firstname, class: 'form-control', readonly: true %></td>
-            <td><%= text_field_tag "employees[#{employee.id}][lastname]", employee.firstname, class: 'form-control', readonly: true %></td>
-            <td><%= text_field_tag "employees[#{employee.id}][salary]", employee.firstname, class: 'form-control', readonly: true %></td>
+            <td><%= text_field_tag "employees[#{employee.id}][firstname]", employee.firstname, class: 'form-control', readonly: true, data: { "editablerow-target": "inputField" } %></td>
+            <td><%= text_field_tag "employees[#{employee.id}][lastname]", employee.firstname, class: 'form-control', readonly: true, data: { "editablerow-target": "inputField" } %></td>
+            <td><%= text_field_tag "employees[#{employee.id}][salary]", employee.firstname, class: 'form-control', readonly: true, data: { "editablerow-target": "inputField" } %></td>
             <td><%= select_tag "employees[#{employee.id}][department_id]", options_from_collection_for_select(select_department, :id, :name, employee.department.id), class: 'form-control', disabled: true %></td>
+            <td><button type="button" class="btn btn-primary" data-action="click->editablerow#toggleEditing">Edit</button></td>
           </tr>
         <% end %>
       </tbody>
