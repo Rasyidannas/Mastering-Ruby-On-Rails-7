@@ -3,30 +3,34 @@
   <br/>
   <br/>
   <% if @employees.present? %>
+    <%= form_with(url: bulk_update_bulkupdates_path, method: :patch) do |form| %>
     <table class="table">
       <thead>
         <tr>
           <th>ID</th>
           <th>First Name</th>
           <th>Last Name</th>
-          <th>Department</th>
           <th>Salary</th>
+          <th>Department</th>
         </tr>
       </thead>
 
       <tbody>
         <% @employees.each do |employee| %>
           <tr data-controller="editablerow">
-            <%= hidden_field_tag "employess[#{employee.id}][editable]", "", class: "editable" %>
+            <%= hidden_field_tag "employees[#{employee.id}][editable]", "", class: "editable" %>
             <td><%= employee.id %></td>
             <td><%= text_field_tag "employees[#{employee.id}][firstname]", employee.firstname, class: 'form-control', readonly: true, data: { "editablerow-target": "inputField" } %></td>
-            <td><%= text_field_tag "employees[#{employee.id}][lastname]", employee.firstname, class: 'form-control', readonly: true, data: { "editablerow-target": "inputField" } %></td>
-            <td><%= text_field_tag "employees[#{employee.id}][salary]", employee.firstname, class: 'form-control', readonly: true, data: { "editablerow-target": "inputField" } %></td>
+            <td><%= text_field_tag "employees[#{employee.id}][lastname]", employee.lastname, class: 'form-control', readonly: true, data: { "editablerow-target": "inputField" } %></td>
+            <td><%= text_field_tag "employees[#{employee.id}][salary]", employee.salary, class: 'form-control', readonly: true, data: { "editablerow-target": "inputField" } %></td>
             <td><%= select_tag "employees[#{employee.id}][department_id]", options_from_collection_for_select(select_department, :id, :name, employee.department.id), class: 'form-control', disabled: true %></td>
             <td><button type="button" class="btn btn-primary" data-action="click->editablerow#toggleEditing">Edit</button></td>
           </tr>
         <% end %>
       </tbody>
     </table>
+
+    <%= form.submit "Update All Employees", class: "btn btn-primary" %>
+    <% end %>
   <% end %>
 </div>
