@@ -1,0 +1,13 @@
+<table class="table">
+  <tbody>
+    <tr>
+      <td><%= f.text_field "employees[][first_name]", placeholder: "Enter First Name", class: "form-control" %></td>
+      <td><%= f.text_field "employees[][last_name]", placeholder: "Enter Last Name", class: "form-control" %></td>
+      <td><%= f.text_field "employees[][email]", placeholder: "Enter Email", class: "form-control" %></td>
+      <td><%= f.text_field "employees[][phone]", placeholder: "Enter Phone Number", class: "form-control" %></td>
+      <td><%= f.select "employees[][departement_id]", options_from_collection_for_select(select_department, 'id', 'name', ""), { include_blank: "Select Department" }, class: 'form-control', autofocus: true %></td>
+      <td><%= f.select "employees[][country_id]", options_from_collection_for_select(select_country, 'id', 'name', ""), { include_blank: "Select Country" }, class: 'form-control', autofocus: true %></td>
+      <td><button data-action="click->bulk-insert#removeEmployee" class="btn btn-danger">Remove</button></td>
+    </tr>
+  </tbody>
+</table>

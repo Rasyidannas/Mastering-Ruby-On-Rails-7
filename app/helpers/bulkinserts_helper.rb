@@ -1,0 +1,2 @@
+module BulkinsertsHelper
+end
