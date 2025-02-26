@@ -1,0 +1,2 @@
+class Offshoreemployee < ApplicationRecord
+end
