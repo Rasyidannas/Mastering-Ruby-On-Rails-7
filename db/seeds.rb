@@ -21,3 +21,17 @@ unless Country.blank?
   Country.create!(name: "Brazil")
   Country.create!(name: "Italy")
 end
+
+unless State.blank?
+  State.create!(name: "Telangana", country_id: 1)
+  State.create!(name: "Andhara Pradesh", country_id: 1)
+
+  State.create!(name: "California", country_id: 2)
+  State.create!(name: "Alaska", country_id: 2)
+end
+
+unless City.blank?
+  City.create(name: "Hydreabad", state_id: 1)
+  
+  City.create(name: "Vizag", state_id: 2)
+end
