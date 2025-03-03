@@ -1,0 +1,15 @@
+<div class="container-fluid">
+  <header class="bg-danger text-white text-center p-2">
+    <h2><span class="bi bi-cart"></span>Shopping Cart Demo</h2>
+  </header>
+  <div class="row mt-2">
+    <div class="col-md-2">
+      <div>
+        <label class="form-label">Select a Category</label>
+        <div>
+          <%= select_tag(:category, options_for_select(@categories), class: "form-select category-dropdown") %>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
