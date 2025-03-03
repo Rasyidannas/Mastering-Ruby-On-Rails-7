@@ -1,0 +1,22 @@
+<% @products.each_with_index do |product, index| %>
+  <div style="width: 200px;" class="card m-2 p-2 <%= (index%2==0) ? 'evenRow-style' : 'oddRow-style' %>">
+    <%= image_tag product["image"], height: '150', class: 'card-img-top' %>
+    <div class="card-header" style="height:180px;">
+      <p><%= product["title"] %></p>
+    </div>
+
+    <div class="card-body">
+      <dl>
+        <dt>Price</dt>
+        <dd><%= product["price"] %></dd>
+        <dt>Rating</dt>
+        <dd><span class="bi bi-star-fill text-success"></span><%= product["rating"]["rate"] %> [<%= product["rating"]["count"] %>]</dd>
+      </dl>
+    </div>
+
+    <div class="card-footer">
+      <span class="bi bi-cart4"></span>
+      Add to Shopping Cart
+    </div>
+  </div>
+<% end %>

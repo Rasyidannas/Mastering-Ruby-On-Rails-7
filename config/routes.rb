@@ -13,4 +13,5 @@ Rails.application.routes.draw do
   # root "posts#index"
   
   get "shoppingcart/index" => "shoppingcart#index"
+  get "/shoppingcart/product_list" => "shoppingcart#product_list"
 end
