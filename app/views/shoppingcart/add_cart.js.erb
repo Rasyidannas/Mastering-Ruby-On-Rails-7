@@ -1,0 +1,4 @@
+$('.cart-table').append("<%= j render partial: 'cart', locals: { product: @product } %>")
+var count = $('.cart-table tr').length;
+$('.cart_count').text(count);
+toastr.success('Product added to cart successfully!!!');

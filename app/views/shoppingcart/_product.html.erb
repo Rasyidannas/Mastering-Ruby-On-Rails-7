@@ -15,8 +15,10 @@
     </div>
 
     <div class="card-footer">
-      <span class="bi bi-cart4"></span>
-      Add to Shopping Cart
+      <%= link_to add_cart_path(product['id']), class: 'btn btn-danger w-100', remote: true do %>
+        <span class="bi bi-cart4"></span>
+        Add to Shopping Cart
+      <% end %>
     </div>
   </div>
 <% end %>

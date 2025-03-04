@@ -14,6 +14,10 @@ class ShoppingcartController < ApplicationController
     @products=get_response(url)
   end
 
+  def add_cart
+    @product = get_response("https://fakestoreapi.com/products/#{params[:product_id]}")
+  end
+
   private 
   def get_response(url)
     response = HTTParty.get(url)
