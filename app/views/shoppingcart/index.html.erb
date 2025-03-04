@@ -17,5 +17,35 @@
         <%= render partial: 'product' %>
       </div>
     </div>
+
+    <div class="col-md-4">
+      <div>
+        <button class="btn btn-danger w-100">
+          <span class="bi bi-cart2"></span>
+          [<span class="cart_count"></span>] Your Shopping Cart Items
+        </button>
+      </div>
+      <div class="mt-2">
+        <table class="table table-hover">
+          <thead>
+            <tr>
+              <th>Title</th>
+              <th>Preview</th>
+              <th>Price</th>
+              <th>Qty</th>
+            </tr>
+          </thead>
+          <tbody class="cart-table">
+
+          </tbody>
+        </table>
+      </div>
+      <div>
+        <button class="btn btn-danger w-100">
+          Total:
+          <span class="total_count">0</span>
+        </button>
+      </div>
+    </div>
   </div>
 </div>
