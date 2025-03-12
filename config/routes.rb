@@ -42,4 +42,6 @@ Rails.application.routes.draw do
 
   get '/locations/states', to: 'locations#states'
   get '/locations/cities', to: 'locations#cities'
+
+  resources :employeespaginations, only: [:index]
 end
