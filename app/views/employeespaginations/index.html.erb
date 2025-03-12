@@ -1,4 +1,10 @@
 <div>
+  <div class="page-size-dropdown">
+    <%= form_tag employeespaginations_path, method: :get, class: 'form-inline' do %>
+      <%= label_tag :per_page, 'Page Size', class: "mr-2" %>
+      <%= select_tag :per_page, options_for_select([5, 10, 15, 20, 25, 50, 100], params[:per_page].to_i), { onchange: 'this.form.submit()', class: "form-control" } %>
+    <% end %>
+  </div>
   <table class="table">
     <thead>
       <tr>
