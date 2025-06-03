@@ -4,15 +4,14 @@ class Admin < ApplicationRecord
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
     
-    enum admin_type: [:super_admin, :customer, :staff_user]
-    belongs_to :role, optional: true
+  enum admin_type: [:super_admin, :customer, :staff_user]
+  belongs_to :role, optional: true
 
-    before_save :manage_role
+  before_save :manage_role
 
-    def manage_role
-      if self.customer?
-        self.role_id = 1
-      end
+  def manage_role
+    if self.customer?
+      self.role_id = 1
     end
   end
 end
