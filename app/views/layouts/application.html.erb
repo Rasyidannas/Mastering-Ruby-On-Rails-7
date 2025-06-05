@@ -37,10 +37,10 @@
 
       <form class="form-inline">
         <% if admin_signed_in? %>
-          <%= link_to "Sign out", destroy_admin_session_path, method: :delete, class: "btn btn-putline my-2 margin-right my-sm-0" %>
+          <%= link_to "Sign out", destroy_admin_session_path, method: :delete, class: "btn btn-outline my-2 margin-right my-sm-0" %>
         <% else %>
           <%= link_to "Sign in", new_admin_session_path, class: "btn btn-outline-success my-2 my-sm-0" %>
-          <%= link_to "Sign in", new_admin_registration_path, class: "btn btn-outline-success my-2 my-sm-0 margin-right" %>
+          <%= link_to "Sign up", new_admin_registration_path, class: "btn btn-outline-success my-2 my-sm-0 margin-right" %>
         <% end %>
       </form>
     </nav>

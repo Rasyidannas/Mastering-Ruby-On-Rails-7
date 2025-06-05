@@ -10,7 +10,7 @@ class DeviseCreateAdmins < ActiveRecord::Migration[7.2]
       t.string :username, null: false, default: ""
       t.string :first_name, null: false, default: ""
       t.string :last_name, null:false, default: ""
-      t.string :admin_type, null:false, default: 1
+      t.integer :admin_type, null:false, default: 1
 
       ## Recoverable
       t.string   :reset_password_token
